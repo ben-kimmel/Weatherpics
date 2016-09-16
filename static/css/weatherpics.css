@@ -1,0 +1,22 @@
+body {
+  background: url('/static/images/noise.jpg');
+  font-family: 'Open Sans', helvetica, Sans-Serif;
+}
+
+td:first-child {
+  width: 80px;
+}
+
+input[type=text] {
+  width: 350px;
+}
+
+input[type=submit] {
+  float: right;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.caption {
+  text-align: center;
+}

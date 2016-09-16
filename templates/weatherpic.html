@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weather Pics</title>
+	<link rel="stylesheet" type="text/css" href="static/css/pinterest.css"/>
+	<link rel="stylesheet" type="text/css" href="static/css/weatherpics.css"/>
+</head>
+<body>
+	<h1>Add a new Weatherpic</h1>
+<form action="/addpic" method="post">
+  <table>
+    <tr>
+      <td>Image URL</td>
+      <td><input type="text" name="image_url"></td>
+    </tr>
+    <tr>
+      <td>Caption</td>
+      <td><input type="text" name="caption"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Submit"></td>
+    </tr>
+  </table>
+</form>
+<hr>
+<h1>Weatherpics</h1>
+
+<div id="wrapper">
+	<div id="columns">
+		{% for weatherpic in weatherpics_query %}
+			<div class="pin">
+				<img src="{{ weatherpic.image_url }}" alt="A picture of weather.">
+				<p class="caption">{{ weatherpic.caption }}</p>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+</body>
+</html>
